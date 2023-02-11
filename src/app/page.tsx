@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Radio from "@/components/Radio";
 import Button from "@/components/Button";
-import * as sort from "@/utils/sorts";
+import { bubbleSort, quickSort } from "@/utils/sorts";
 import { SORT_TYPES } from "@/constants";
 
 export default function Home() {
@@ -19,14 +19,13 @@ export default function Home() {
       return;
     }
     const data = value.split(",").map((item) => parseInt(item));
-    const result = sort[sortType](data);
+    const result = sortType === "bubbleSort" ? bubbleSort(data) : quickSort(data);
     setResult(result.join(","));
   };
 
-  const submitHandler = (event) => {
+  const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setSortTypeHandler(event.target.sort.value);
-    setResultHandler(event.target.input.value);
+    setResultHandler(originalData);
   };
 
   return (
@@ -65,6 +64,7 @@ export default function Home() {
                 defaultValue={originalData}
                 className="w-full block border border-gray-300 rounded-md p-2 tracking-wider"
                 pattern="^[0-9,]+$"
+                onChange={(event) => setOriginalData(event.target.value)}
               />
             </div>
 

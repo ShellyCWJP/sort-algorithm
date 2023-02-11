@@ -1,4 +1,4 @@
-export const bubbleSort = (array: number[]) => {
+export const bubbleSort = (array: number[]): number[] => {
   if (array.length <= 1) return array;
 
   let result = array;
@@ -16,7 +16,7 @@ export const bubbleSort = (array: number[]) => {
   return result;
 };
 
-export const quickSort = (array: number[]) => {
+export const quickSort = (array: number[]): number[] => {
   if (array.length <= 1) return array;
 
   const [pivot, ...rest] = array;

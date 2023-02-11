@@ -4,9 +4,10 @@ export type RadioProps = {
   value: string;
   label: string;
   checked?: boolean;
+  onClick?: () => void;
 };
 
-const Radio = ({ id, name, value, label, checked }: RadioProps) => {
+const Radio = ({ id, name, value, label, checked, onClick }: RadioProps) => {
   return (
     <label className="inline-flex items-center gap-1 cursor-pointer">
       <input
@@ -15,6 +16,7 @@ const Radio = ({ id, name, value, label, checked }: RadioProps) => {
         id={id}
         defaultValue={value}
         defaultChecked={checked}
+        onClick={onClick}
       />
       <span>{label}</span>
     </label>
