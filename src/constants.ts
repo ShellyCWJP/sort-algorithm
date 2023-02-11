@@ -1,13 +1,13 @@
 export const SORT_TYPES = [
   {
     id: 'bubble',
-    value: 'bubble',
+    value: 'bubbleSort',
     label: 'バブルソート',
     checked: true,
   },
   {
     id: 'quick',
-    value: 'quick',
+    value: 'quickSort',
     label: 'クイックソート',
     checked: false,
   },
