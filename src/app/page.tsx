@@ -100,7 +100,7 @@ export default function Home() {
       <footer className="mt-5 text-center text-gray-700 text-xs">
         <p>
           <a
-            href="#"
+            href="https://github.com/ShellyCWJP/sort-algorithm"
             target="_blank"
             rel="noreferrer"
             className="underline hover:text-sky-700"
